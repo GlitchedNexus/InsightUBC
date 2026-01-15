@@ -41,7 +41,8 @@ src/
 ├── DataProcessor/ # Dataset-specific models and helpers
 ├── Persistence/ # Disk I/O and dataset storage
 ├── rest/ # Express server and routing
-└── App.ts # Application entry point
+├── App.ts # Application entry point
+└── frontend # Next.js Dashboard
 ```
 
 The system is designed with **clear module boundaries** to ensure maintainability and testability.
