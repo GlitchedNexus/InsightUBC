@@ -1,0 +1,49 @@
+{
+	"title": "Query with wrong case",
+	"input": {
+        "where": {
+			"and": [
+				{
+					"is": {
+						"sections_title": ""
+					}
+				},
+				{
+					"or": [
+						{
+							"gt": {
+								"sections_avg": 50
+							}
+						}
+					]
+				},
+				{
+					"lt": {
+						"sections_avg": 100
+					}
+				},
+				{
+					"eq": {
+						"sections_avg": 75
+					}
+				},
+				{
+					"not": {
+						"is": {
+							"sections_title": ""
+						}
+					}
+				}
+
+			]
+		},
+		"Options": {
+			"Columns": [
+				"sections_avg"
+			],
+			"Order": "sections_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

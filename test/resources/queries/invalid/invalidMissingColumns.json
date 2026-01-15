@@ -1,0 +1,36 @@
+{
+	"title": "invalidMissingColumns",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"IS": {
+						"sections_instructor": "*and*"
+					}
+				},
+				{
+					"GT": {
+						"sections_avg": 90
+					}
+				},
+				{
+					"AND": [
+						{
+							"LT": {
+								"sections_fail": 50
+							}
+						},
+						{
+							"EQ": {
+								"sections_year": 2001
+							}
+						}
+					]
+				}
+			]
+		},
+		"OPTIONS": {}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

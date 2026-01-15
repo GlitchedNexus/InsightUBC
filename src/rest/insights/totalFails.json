@@ -1,0 +1,26 @@
+{
+    "WHERE": {
+      "IS": {
+        "sections_dept": "cpsc"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_instructor",
+        "totalFail"
+      ],
+      "ORDER": "totalFail"
+    },
+    "TRANSFORMATIONS": {
+      "GROUP": [
+        "sections_instructor"
+      ],
+      "APPLY": [
+        {
+          "totalFail": {
+            "SUM": "sections_fail"
+          }
+        }
+      ]
+    }
+  }

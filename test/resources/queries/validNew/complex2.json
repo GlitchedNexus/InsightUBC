@@ -1,0 +1,490 @@
+{
+    "title": "Complex query 2 w/ transformations and sort",
+    "input": {
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "big_title", 
+            "big_audit",
+            "big_fail", 
+            "big_instructor"
+          ],
+          "APPLY": [
+            {
+              "drizzy": {
+                "MAX": "big_fail"
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+              "COLUMNS": [
+                "big_title",
+                "big_audit",
+                "big_fail",
+                "big_instructor",
+                "drizzy"
+              ],
+              "ORDER": "big_title"
+            },
+          "WHERE": {
+            "AND": [
+              {
+                "AND": [
+                  {
+                    "IS": {
+                      "big_title": "ca*"
+                    }
+                  },
+                  {
+                    "GT": {
+                      "big_avg": 80
+                    }
+                  },
+                  {
+                    "GT": {
+                      "big_year": 2010
+                    }
+                  }
+                ]
+              },
+              {
+                "NOT": {
+                  "EQ": {
+                    "big_year": 2011 
+                  }
+                }
+              }
+            ]
+          }
+    },
+    "errorExpected": false,
+    "expected": [
+        {
+            "big_title": "cad algrthm i cr",
+            "big_audit": 1,
+            "big_fail": 0,
+            "big_instructor": "wilton, steven",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cad algrthm i cr",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "wilton, steven",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cad/cam prin&pra",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "feng, hsi-yung",
+            "drizzy": 0
+          },
+          {
+            "big_title": "calculus survey",
+            "big_audit": 0,
+            "big_fail": 4,
+            "big_instructor": "lyons, charles",
+            "drizzy": 4
+          },
+          {
+            "big_title": "can art",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "o'brian, john",
+            "drizzy": 0
+          },
+          {
+            "big_title": "can health pol",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "morgan, steven george",
+            "drizzy": 1
+          },
+          {
+            "big_title": "can health pol",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "morgan, steven george",
+            "drizzy": 0
+          },
+          {
+            "big_title": "can since 1945",
+            "big_audit": 1,
+            "big_fail": 0,
+            "big_instructor": "silver, lara",
+            "drizzy": 0
+          },
+          {
+            "big_title": "can soci plcy",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "johnston, patricia",
+            "drizzy": 0
+          },
+          {
+            "big_title": "can soci plcy",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "tester, frank",
+            "drizzy": 0
+          },
+          {
+            "big_title": "can soci plcy",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "yan, miu chung",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cancer epid",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "regier, dean;spinelli, john",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cancer epid",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "peacock, stuart;spinelli, john",
+            "drizzy": 0
+          },
+          {
+            "big_title": "capitl structure",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "ortiz-molina, hernan",
+            "drizzy": 0
+          },
+          {
+            "big_title": "capstn dsgn proj",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "arefifar, seyed ali;botman, pieter;fels, s sidney;grecu, cristian sorin;kruchten, philippe;lee, terry;lusina, paul;madden, john;najarian, siamak;tang, shuo",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cardio&resp phyl",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "courneya, carol-ann;kehl, steven;moore, edwin d;osborne, salma",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cardio&resp phyl",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "moore, edwin d;osborne, salma",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cardiovas path",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "allard, michael",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cardiovas path",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "luo, honglin",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "amundson, norman",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "gofton, lucy",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "bruno, talino",
+            "drizzy": 1
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "klubben, laura",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "zheng, lulin",
+            "drizzy": 1
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "amundson, norman;klubben, laura",
+            "drizzy": 1
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "yeung, paul",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "bruno, talino",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "",
+            "drizzy": 1
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 2,
+            "big_instructor": "bruno, talino",
+            "drizzy": 2
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "fenn, jacqui",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "dyer, brenda",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "wiens, sandra",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career counselng",
+            "big_audit": 0,
+            "big_fail": 3,
+            "big_instructor": "bruno, talino",
+            "drizzy": 3
+          },
+          {
+            "big_title": "career fundmtls",
+            "big_audit": 0,
+            "big_fail": 2,
+            "big_instructor": "watson, michelle",
+            "drizzy": 2
+          },
+          {
+            "big_title": "career fundmtls",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "watson, michelle",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career fundmtls",
+            "big_audit": 0,
+            "big_fail": 3,
+            "big_instructor": "watson, michelle",
+            "drizzy": 3
+          },
+          {
+            "big_title": "career fundmtls",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "watson, michelle tanya",
+            "drizzy": 1
+          },
+          {
+            "big_title": "career planning",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "yeung, paul",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career planning",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "cox, daniel",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career planning",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "erlebach, anne",
+            "drizzy": 0
+          },
+          {
+            "big_title": "career planning",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "amundson, norman",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case appraisl ii",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case appraisl ii",
+            "big_audit": 0,
+            "big_fail": 1,
+            "big_instructor": "",
+            "drizzy": 1
+          },
+          {
+            "big_title": "case integr i",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "rankin, anne",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case integr i",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case intgr iii",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "klassen, tara",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case intgr iii",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case museum",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "shelton, anthony",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case museum",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "levell, nicola",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case res&analys",
+            "big_audit": 3,
+            "big_fail": 0,
+            "big_instructor": "anderson, ann",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case res&analys",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "hopper, timothy;sanford, kathy",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case res&analys",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "anderson, ann",
+            "drizzy": 0
+          },
+          {
+            "big_title": "case studies",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "cohen freue, gabriela",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cases pharm ii",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "price, ingrid",
+            "drizzy": 0
+          },
+          {
+            "big_title": "catlg & class",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "ehrensperger, florian",
+            "drizzy": 0
+          },
+          {
+            "big_title": "catlg & class",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "kempthorne, maryann",
+            "drizzy": 0
+          },
+          {
+            "big_title": "catlg & class",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "loehrlein, aaron",
+            "drizzy": 0
+          },
+          {
+            "big_title": "catlg & class",
+            "big_audit": 1,
+            "big_fail": 0,
+            "big_instructor": "ehrensperger, florian",
+            "drizzy": 0
+          },
+          {
+            "big_title": "catlg & class",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "chan, may",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cave mn sys: d&p",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "elmo, davide",
+            "drizzy": 0
+          },
+          {
+            "big_title": "cave mn sys: d&p",
+            "big_audit": 0,
+            "big_fail": 0,
+            "big_instructor": "elmo, davide;scoble, malcolm",
+            "drizzy": 0
+          }
+    ]
+}

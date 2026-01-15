@@ -1,0 +1,17 @@
+{
+	"title": "Query with two datasets",
+	"input": {
+        "WHERE": {
+			"IS": {
+				"sections_title": ""
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"big_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

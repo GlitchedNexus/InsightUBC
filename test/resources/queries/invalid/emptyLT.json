@@ -1,0 +1,15 @@
+{
+	"title": "Query empty LT",
+	"input": {
+        "WHERE": {
+			"LT": {}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,65 @@
+{
+	"title": "Query with wrong keys",
+	"input": {
+        "WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"sections_hairline": ""
+					}
+				},
+				{
+					"GT": {
+						"sections_Avg": 50
+					}
+				},
+				{
+					"GT": {
+						"sections_Pass": 1
+					}
+				},
+				{
+					"GT": {
+						"sections_Fail": 10
+					}
+				},
+				{
+					"GT": {
+						"sections_Year": 2010
+					}
+				},
+				{
+					"GT": {
+						"sections_Audit": 0
+					}
+				},
+				{
+					"IS": {
+						"sections_Dept": "s*"
+					}
+				},
+				{
+					"IS": {
+						"sections_Instructor": "s*"
+					}
+				},
+				{
+					"IS": {
+						"sections_Title": "s*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_Title",
+				"sections_hairlines",
+				"sections_Dept",
+				"sections_Year"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

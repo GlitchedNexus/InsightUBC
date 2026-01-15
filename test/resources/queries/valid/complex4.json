@@ -1,0 +1,71 @@
+{
+	"title": "test complex query three",
+	"input": {
+    "OPTIONS": {
+        "ORDER": "big_title",
+        "COLUMNS": [
+          "big_title",
+          "big_avg",
+          "big_year"
+        ]
+      },
+    "WHERE": {
+      "AND": [
+        {
+          "AND": [
+            {
+              "IS": {
+                "big_title": "cp*"
+              }
+            },
+            {
+              "GT": {
+                "big_avg": 80
+              }
+            },
+            {
+              "GT": {
+                "big_year": 2010
+              }
+            }
+          ]
+        },
+        {
+          "NOT": {
+            "EQ": {
+              "big_year": 2011 
+            }
+          }
+        }
+      ]
+    }
+  },
+	"errorExpected": false,
+	"expected": [
+        {
+          "big_title": "cptl budgeting",
+          "big_avg": 84.18,
+          "big_year": 2013
+        },
+        {
+          "big_title": "cptl budgeting",
+          "big_avg": 81.6,
+          "big_year": 2013
+        },
+        {
+          "big_title": "cptl budgeting",
+          "big_avg": 82.91,
+          "big_year": 2012
+        },
+        {
+          "big_title": "cptl budgeting",
+          "big_avg": 85.21,
+          "big_year": 2012
+        },
+        {
+          "big_title": "cptl budgeting",
+          "big_avg": 84,
+          "big_year": 2014
+        }
+      ]
+}

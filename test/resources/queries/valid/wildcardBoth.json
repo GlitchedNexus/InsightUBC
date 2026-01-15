@@ -1,0 +1,25 @@
+{
+	"title": "test both wildcard",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_title": "*r*"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_title"
+			],
+			"ORDER": "sections_title"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"sections_title": "rsrch methdlgy"
+		},
+		{
+			"sections_title": "rsrch methdlgy"
+		}
+	]
+}

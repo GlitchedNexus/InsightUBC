@@ -1,0 +1,15 @@
+{
+	"title": "Query empty NOT",
+	"input": {
+        "WHERE": {
+			"NOT" : {}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

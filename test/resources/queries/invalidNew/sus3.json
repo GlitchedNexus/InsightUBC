@@ -1,0 +1,47 @@
+
+{
+    "title": "something sus 3",
+      "input": {
+        "WHERE": {
+          "AND": [
+            {
+              "GT": {
+                "big_avg": 100
+              }
+            },
+            {
+              "IS": {
+                "big_lat": "*i*"
+              }
+            },
+            {
+              "GT": {
+                "big_fail": 2
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "big_instructor",
+            "big_fail"
+          ],
+          "ORDER": {
+            "dir": "DOWN",
+            "keys": [
+              "minFail",
+              "sumAvg"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "big_instructor",
+            "big_fail"
+          ],
+          "APPLY": []
+        }
+      },
+      "errorExpected": true,
+      "expected": "InsightError"
+    }

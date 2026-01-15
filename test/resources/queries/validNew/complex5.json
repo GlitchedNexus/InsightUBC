@@ -1,0 +1,363 @@
+{
+    "title": "Complex query 5 w/ transformations and sort",
+      "input": {
+        "WHERE": {
+          "AND": [
+            {
+              "GT": {
+                "big_avg": 80
+              }
+            },
+            {
+              "IS": {
+                "big_instructor": "*i*"
+              }
+            },
+            {
+              "GT": {
+                "big_fail": 2
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "big_instructor",
+            "big_fail",
+            "sumAvg",
+            "minFail"
+          ],
+          "ORDER": {
+            "dir": "DOWN",
+            "keys": [
+              "minFail",
+              "sumAvg"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "big_instructor",
+            "big_fail"
+          ],
+          "APPLY": [
+            {
+              "sumAvg": {
+                "SUM": "big_avg"
+              }
+            },
+            {
+              "minFail": {
+                "MIN": "big_fail"
+              }
+            }
+          ]
+        }
+      },
+      "errorExpected": false,
+      "expected": [
+        {
+            "big_instructor": "mitchell, ian",
+            "big_fail": 19,
+            "sumAvg": 80.09,
+            "minFail": 19
+          },
+          {
+            "big_instructor": "turner, david",
+            "big_fail": 16,
+            "sumAvg": 80.43,
+            "minFail": 16
+          },
+          {
+            "big_instructor": "mitchell, ian",
+            "big_fail": 9,
+            "sumAvg": 82.39,
+            "minFail": 9
+          },
+          {
+            "big_instructor": "johnson, kayli;lindenberg, erin",
+            "big_fail": 9,
+            "sumAvg": 81.25,
+            "minFail": 9
+          },
+          {
+            "big_instructor": "calvino-fraga, jesus",
+            "big_fail": 8,
+            "sumAvg": 81.44,
+            "minFail": 8
+          },
+          {
+            "big_instructor": "macintosh, lori",
+            "big_fail": 7,
+            "sumAvg": 80.33,
+            "minFail": 7
+          },
+          {
+            "big_instructor": "bates, frances;mackay, alexander;milner, valery",
+            "big_fail": 7,
+            "sumAvg": 80.14,
+            "minFail": 7
+          },
+          {
+            "big_instructor": "turner, david",
+            "big_fail": 7,
+            "sumAvg": 80.08,
+            "minFail": 7
+          },
+          {
+            "big_instructor": "turner, david",
+            "big_fail": 6,
+            "sumAvg": 82.82,
+            "minFail": 6
+          },
+          {
+            "big_instructor": "burkholder, leslie",
+            "big_fail": 6,
+            "sumAvg": 81.56,
+            "minFail": 6
+          },
+          {
+            "big_instructor": "whitlock, michael",
+            "big_fail": 6,
+            "sumAvg": 80.87,
+            "minFail": 6
+          },
+          {
+            "big_instructor": "isaacson, michael d;joghataie, abdolreza",
+            "big_fail": 6,
+            "sumAvg": 80.74,
+            "minFail": 6
+          },
+          {
+            "big_instructor": "tsiknis, georgios",
+            "big_fail": 5,
+            "sumAvg": 82.63,
+            "minFail": 5
+          },
+          {
+            "big_instructor": "schulte, patricia;tortell, philippe",
+            "big_fail": 5,
+            "sumAvg": 81.76,
+            "minFail": 5
+          },
+          {
+            "big_instructor": "graves, marcia",
+            "big_fail": 5,
+            "sumAvg": 80.34,
+            "minFail": 5
+          },
+          {
+            "big_instructor": "wiltschko, martina",
+            "big_fail": 5,
+            "sumAvg": 80.27,
+            "minFail": 5
+          },
+          {
+            "big_instructor": "whitlock, michael",
+            "big_fail": 4,
+            "sumAvg": 162.68,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "smith, karen",
+            "big_fail": 4,
+            "sumAvg": 83.68,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "longridge, louise",
+            "big_fail": 4,
+            "sumAvg": 81.35,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "agharebparast, farshid",
+            "big_fail": 4,
+            "sumAvg": 80.86,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "tsiknis, georgios",
+            "big_fail": 4,
+            "sumAvg": 80.64,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "cripton, peter",
+            "big_fail": 4,
+            "sumAvg": 80.36,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "ellis, naoko;fernlund, goran;jaeger, carol patricia;nakane, jonathan;nazhat, yahya;nesbit, susan;ostafichuk, peter;yadav, vikramaditya;yan, joseph",
+            "big_fail": 4,
+            "sumAvg": 80.28,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "matthews, jaymie mark",
+            "big_fail": 4,
+            "sumAvg": 80.17,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "dangeli, miquel icesis",
+            "big_fail": 4,
+            "sumAvg": 80.1,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "turner, david",
+            "big_fail": 4,
+            "sumAvg": 80.05,
+            "minFail": 4
+          },
+          {
+            "big_instructor": "konoval, michael brandon",
+            "big_fail": 3,
+            "sumAvg": 163.71,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "atwater, james;chieng, sie-tan;stiemer, siegfried",
+            "big_fail": 3,
+            "sumAvg": 85.75,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "bruno, talino",
+            "big_fail": 3,
+            "sumAvg": 84.89,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "whistler, diana",
+            "big_fail": 3,
+            "sumAvg": 84.63,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "germano, bernardita",
+            "big_fail": 3,
+            "sumAvg": 84.58,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "simard, suzanne;tikina, anna",
+            "big_fail": 3,
+            "sumAvg": 83.54,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "mcmillan, j malcolm",
+            "big_fail": 3,
+            "sumAvg": 83.41,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "bishundayal, deonarine",
+            "big_fail": 3,
+            "sumAvg": 83.16,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "wiltschko, martina",
+            "big_fail": 3,
+            "sumAvg": 83.07,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "prykhodko, dariya",
+            "big_fail": 3,
+            "sumAvg": 82.67,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "schmidt, mark",
+            "big_fail": 3,
+            "sumAvg": 82.66,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "watson, michelle",
+            "big_fail": 3,
+            "sumAvg": 82.08,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "tsiknis, georgios",
+            "big_fail": 3,
+            "sumAvg": 82.05,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "ives, joss",
+            "big_fail": 3,
+            "sumAvg": 81.89,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "tan, william",
+            "big_fail": 3,
+            "sumAvg": 81.82,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "baniassad, elisa",
+            "big_fail": 3,
+            "sumAvg": 81.18,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "holmes, reid",
+            "big_fail": 3,
+            "sumAvg": 81.17,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "jean, francois;krebs, danielle",
+            "big_fail": 3,
+            "sumAvg": 81.15,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "damascelli, andrea",
+            "big_fail": 3,
+            "sumAvg": 80.93,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "anasavarapu, srikantha",
+            "big_fail": 3,
+            "sumAvg": 80.83,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "alimohammadi, majid",
+            "big_fail": 3,
+            "sumAvg": 80.71,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "adebar, perry erwin",
+            "big_fail": 3,
+            "sumAvg": 80.47,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "laba, izabella",
+            "big_fail": 3,
+            "sumAvg": 80.47,
+            "minFail": 3
+          },
+          {
+            "big_instructor": "isaacson, michael d",
+            "big_fail": 3,
+            "sumAvg": 80.43,
+            "minFail": 3
+          }
+      ]
+  }
+  
+  
+  

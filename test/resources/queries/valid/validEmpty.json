@@ -1,0 +1,50 @@
+{
+	"title": "validEmpty",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"sections_instructor": "*and*"
+					}
+				},
+				{
+					"GT": {
+						"sections_avg": 100
+					}
+				},
+				{
+					"OR": [
+						{
+							"LT": {
+								"sections_fail": 200
+							}
+						},
+						{
+							"EQ": {
+								"sections_year": 200
+							}
+						}
+					]
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_uuid",
+				"sections_id",
+				"sections_title",
+				"sections_instructor",
+				"sections_dept",
+				"sections_year",
+				"sections_avg",
+				"sections_pass",
+				"sections_fail",
+				"sections_audit"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": []
+}

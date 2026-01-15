@@ -1,0 +1,26 @@
+{
+    "WHERE": {
+      "IS": {
+        "sections_dept": "cpsc"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_year",
+        "avgGrade"
+      ],
+      "ORDER": "sections_year"
+    },
+    "TRANSFORMATIONS": {
+      "GROUP": [
+        "sections_year"
+      ],
+      "APPLY": [
+        {
+          "avgGrade": {
+            "AVG": "sections_avg"
+          }
+        }
+      ]
+    }
+}

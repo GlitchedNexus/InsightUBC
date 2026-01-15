@@ -1,0 +1,50 @@
+{
+	"title": "invalidDoubleUnderscore",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"IS": {
+						"sections_instructor": "*and*"
+					}
+				},
+				{
+					"GT": {
+						"sections_avg": 100
+					}
+				},
+				{
+					"AND": [
+						{
+							"LT": {
+								"sections_fail": 50
+							}
+						},
+						{
+							"EQ": {
+								"sections_year": 2004
+							}
+						}
+					]
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_uuid",
+				"sections_id",
+				"sections__title",
+				"sections_instructor",
+				"sections_dept",
+				"sections_year",
+				"sections_avg",
+				"sections_pass",
+				"sections_fail",
+				"sections_audit"
+			],
+			"ORDER": "sections_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

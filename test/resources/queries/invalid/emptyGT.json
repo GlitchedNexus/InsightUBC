@@ -1,0 +1,15 @@
+{
+	"title": "Query empty GT",
+	"input": {
+        "WHERE": {
+			"GT": {}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

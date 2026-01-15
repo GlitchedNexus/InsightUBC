@@ -1,0 +1,24 @@
+{
+	"title": "validEQ",
+	"input": {
+		"WHERE": {
+			"EQ": {
+				"big_avg": 4
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["big_id", "big_avg"]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"big_id": "330",
+			"big_avg": 4
+		},
+		{
+			"big_id": "330",
+			"big_avg": 4
+		}
+	]
+}

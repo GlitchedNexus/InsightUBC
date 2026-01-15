@@ -1,0 +1,36 @@
+{
+	"title": "Query many case errors",
+	"input": {
+        "WHERE": {
+          "GT": {
+            "rooms_seats": 97
+          }
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "rooms_name",
+            "carti"
+          ],
+          "ORDER": {
+            "DIR": "UP",
+            "KEYS": [
+              "carti"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "group": [
+            "rooms_names"
+          ],
+          "apply": [
+            {
+              "carti": {
+                "count": "rooms_name"
+              }
+            }
+          ]
+        }
+    },
+	"errorExpected": true,
+	"expected": "InsightError"
+}

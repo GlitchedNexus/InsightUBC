@@ -1,0 +1,13 @@
+{
+	"title": "test bad dataset",
+	"input": {
+        "WHERE": {
+            "LT" : {
+                "kamala_avg" : 90
+            }
+        },
+		"OPTIONS": {}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

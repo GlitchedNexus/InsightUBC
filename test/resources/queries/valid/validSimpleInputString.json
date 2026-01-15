@@ -1,0 +1,56 @@
+{
+	"title": "validSimpleInputString",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"ubc-sections_instructor": "duncan, alexander"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"ubc-sections_uuid",
+				"ubc-sections_id",
+				"ubc-sections_title",
+				"ubc-sections_instructor",
+				"ubc-sections_dept",
+				"ubc-sections_year",
+				"ubc-sections_avg",
+				"ubc-sections_pass",
+				"ubc-sections_fail",
+				"ubc-sections_audit"
+			],
+			"ORDER": "ubc-sections_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"ubc-sections_uuid": "5137",
+			"ubc-sections_id": "102",
+			"ubc-sections_title": "df calc app lf s",
+			"ubc-sections_instructor": "duncan, alexander",
+			"ubc-sections_dept": "math",
+			"ubc-sections_year": 2009,
+			"ubc-sections_avg": 57.56,
+			"ubc-sections_pass": 64,
+			"ubc-sections_fail": 16,
+			"ubc-sections_audit": 0
+		},
+		{
+			"ubc-sections_uuid": "13717",
+			"ubc-sections_id": "105",
+			"ubc-sections_title": "int calc ap c&ss",
+			"ubc-sections_instructor": "duncan, alexander",
+			"ubc-sections_dept": "math",
+			"ubc-sections_year": 2007,
+			"ubc-sections_avg": 65.54,
+			"ubc-sections_pass": 71,
+			"ubc-sections_fail": 5,
+			"ubc-sections_audit": 0
+		}
+	]
+}

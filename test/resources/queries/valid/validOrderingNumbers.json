@@ -1,0 +1,51 @@
+{
+	"title": "validOrderingNumbers",
+	"input": {
+		"OPTIONS": {
+			"ORDER": "big_avg",
+			"COLUMNS": ["big_title", "big_avg", "big_year"]
+		},
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"big_avg": 95
+					}
+				},
+				{
+					"GT": {
+						"big_year": 2015
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"big_title": "islnd wild mgmt",
+			"big_avg": 95.26,
+			"big_year": 2016
+		},
+		{
+			"big_title": "indig, tech&ed",
+			"big_avg": 95.32,
+			"big_year": 2016
+		},
+		{
+			"big_title": "exp des anl ed",
+			"big_avg": 95.9,
+			"big_year": 2016
+		},
+		{
+			"big_title": "eth&profl issues",
+			"big_avg": 96.73,
+			"big_year": 2016
+		},
+		{
+			"big_title": "diff geometry i",
+			"big_avg": 97.25,
+			"big_year": 2016
+		}
+	]
+}

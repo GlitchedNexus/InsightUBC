@@ -1,0 +1,18 @@
+{
+	"title": "test wrong wildcard middle",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"sections_title": "**ab"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_title"
+			],
+			"ORDER": "sections_title"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

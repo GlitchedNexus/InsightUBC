@@ -1,0 +1,44 @@
+{
+	"title": "validLT",
+	"input": {
+		"WHERE": {
+			"LT": {
+				"big_avg": 15
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": ["big_id", "big_avg"]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"big_id": "330",
+			"big_avg": 4
+		},
+		{
+			"big_id": "330",
+			"big_avg": 4
+		},
+		{
+			"big_id": "362",
+			"big_avg": 4.5
+		},
+		{
+			"big_id": "202",
+			"big_avg": 0
+		},
+		{
+			"big_id": "100",
+			"big_avg": 0
+		},
+		{
+			"big_id": "100",
+			"big_avg": 0
+		},
+		{
+			"big_id": "475",
+			"big_avg": 1
+		}
+	]
+}

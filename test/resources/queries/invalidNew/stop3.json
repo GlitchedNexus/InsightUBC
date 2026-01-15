@@ -1,0 +1,46 @@
+
+{
+    "title": "i cant 3",
+      "input": {
+        "WHERE": {
+          "AND": [
+            {
+              "IS": {
+                "rooms_furniture": "*Tables*"
+              }
+            },
+            {
+              "GT": {
+                "rooms_seats": 800
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "rooms_shortname",
+            "maxSeats"
+          ],
+          "ORDER": {
+            "dir": "DOWN",
+            "keys": [
+              "maxSeats"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "rooms_shortname"
+          ],
+          "APPLY": [
+            {
+              "maxSeats": {
+                "min": "rooms_seats"
+              }
+            }
+          ]
+        }
+      },
+      "errorExpected": true,
+      "expected": "InsightError"
+  }

@@ -1,0 +1,23 @@
+{
+	"title": "Query with multiple errors",
+	"input": {
+        "WHERE": {
+			"AND": [
+				{
+					"OR": [
+						{}
+					]
+				},
+				{},
+				{
+					"IS": {}
+				},
+				{
+					"NOT": {}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

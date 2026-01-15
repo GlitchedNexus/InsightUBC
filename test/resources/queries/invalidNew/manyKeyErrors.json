@@ -1,0 +1,35 @@
+{
+	"title": "Query many key errors",
+	"input": {
+        "WHERE": {
+          "GT": {
+            "rooms_seats": 97
+          }
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "rooms_name"
+          ],
+          "ORDER": {
+            "dir": "left",
+            "keys": [
+              "avgLon"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "rooms-seats"
+          ],
+          "APPLY": [
+            {
+              "rooms_name": {
+                "MAX": "rooms_id"
+              }
+            }
+          ]
+        }
+    },
+	"errorExpected": true,
+	"expected": "InsightError"
+}

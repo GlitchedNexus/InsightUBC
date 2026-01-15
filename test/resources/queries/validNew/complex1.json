@@ -1,0 +1,156 @@
+{
+    "title": "Complex query w/ transformations and sort",
+    "input": {
+        "WHERE": {
+        "AND": [
+            {
+            "OR": [
+                {
+                "IS": {
+                    "rooms_fullname": "*B"
+                }
+                },
+                {
+                "IS": {
+                    "rooms_furniture": "*Tables*"
+                }
+                }
+            ]
+            },
+            {
+            "GT": {
+                "rooms_seats": 200
+            }
+            }
+        ]
+        },
+        "OPTIONS": {
+        "COLUMNS": [
+            "rooms_name",
+            "rooms_number",
+            "avgLon",
+            "sumSeats",
+            "minLat",
+            "countType"
+        ],
+        "ORDER": {
+            "dir": "DOWN",
+            "keys": [
+            "avgLon",
+            "rooms_name"
+            ]
+        }
+        },
+        "TRANSFORMATIONS": {
+        "GROUP": [
+            "rooms_name",
+            "rooms_number"
+        ],
+        "APPLY": [
+            {
+            "avgLon": {
+                "AVG": "rooms_lon"
+            }
+            },
+            {
+            "sumSeats": {
+                "SUM": "rooms_seats"
+            }
+            },
+            {
+            "minLat": {
+                "MIN": "rooms_lat"
+            }
+            },
+            {
+            "countType": {
+                "COUNT": "rooms_type"
+            }
+            }
+        ]
+        }
+    },
+    "errorExpected": false,
+    "expected": [
+        {
+            "rooms_name": "PHRM_1101",
+            "rooms_number": "1101",
+            "avgLon": -123.24,
+            "sumSeats": 236,
+            "minLat": 49.26229,
+            "countType": 1
+          },
+          {
+            "rooms_name": "OSBO_A",
+            "rooms_number": "A",
+            "avgLon": -123.24,
+            "sumSeats": 442,
+            "minLat": 49.26047,
+            "countType": 1
+          },
+          {
+            "rooms_name": "LSC_1002",
+            "rooms_number": "1002",
+            "avgLon": -123.24,
+            "sumSeats": 350,
+            "minLat": 49.26236,
+            "countType": 1
+          },
+          {
+            "rooms_name": "LSC_1001",
+            "rooms_number": "1001",
+            "avgLon": -123.24,
+            "sumSeats": 350,
+            "minLat": 49.26236,
+            "countType": 1
+          },
+          {
+            "rooms_name": "SRC_220C",
+            "rooms_number": "220C",
+            "avgLon": -123.25,
+            "sumSeats": 299,
+            "minLat": 49.2683,
+            "countType": 1
+          },
+          {
+            "rooms_name": "SRC_220B",
+            "rooms_number": "220B",
+            "avgLon": -123.25,
+            "sumSeats": 299,
+            "minLat": 49.2683,
+            "countType": 1
+          },
+          {
+            "rooms_name": "SRC_220A",
+            "rooms_number": "220A",
+            "avgLon": -123.25,
+            "sumSeats": 299,
+            "minLat": 49.2683,
+            "countType": 1
+          },
+          {
+            "rooms_name": "HEBB_100",
+            "rooms_number": "100",
+            "avgLon": -123.25,
+            "sumSeats": 375,
+            "minLat": 49.2661,
+            "countType": 1
+          },
+          {
+            "rooms_name": "ANGU_098",
+            "rooms_number": "098",
+            "avgLon": -123.25,
+            "sumSeats": 260,
+            "minLat": 49.26486,
+            "countType": 1
+          },
+          {
+            "rooms_name": "LSK_200",
+            "rooms_number": "200",
+            "avgLon": -123.26,
+            "sumSeats": 205,
+            "minLat": 49.26545,
+            "countType": 1
+          }
+    ]
+}

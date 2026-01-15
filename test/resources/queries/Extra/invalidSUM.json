@@ -1,0 +1,30 @@
+{
+	"title": "invalidSUM",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"rooms_shortname": "DMP"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"minSeats"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname"
+			],
+			"APPLY": [
+				{
+					"minSeats": {
+						"SUM": "rooms_shortname"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

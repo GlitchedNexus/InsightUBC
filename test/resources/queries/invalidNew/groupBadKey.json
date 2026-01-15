@@ -1,0 +1,22 @@
+{
+	"title": "Query empty GROUP",
+	"input": {
+        "WHERE": {
+          "GT": {
+            "rooms_seats": 97
+          }
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "rooms_name"
+          ],
+          "ORDER": "rooms_name"
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": ["rooms_seats"],
+          "APPLY": []
+        }
+    },  
+	"errorExpected": true,
+	"expected": "InsightError"
+}

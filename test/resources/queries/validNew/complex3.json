@@ -1,0 +1,462 @@
+{
+    "title": "Complex query 3 w/ transformations and sort",
+    "input": {
+        "WHERE": {
+          "OR": [
+            {
+              "IS": {
+                "rooms_name": "B*"
+              }
+            },
+            {
+              "GT": {
+                "rooms_lon": 10
+              }
+            },
+            {
+              "LT": {
+                "rooms_lat": 20
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "rooms_name",
+            "avgSeats",
+            "minSeats",
+            "sumLat"
+          ]
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": ["rooms_name"],
+          "APPLY": [
+            {
+              "avgSeats": {
+                "AVG": "rooms_seats"
+              }
+            },
+            {
+              "sumLat": {
+                "SUM": "rooms_lat"
+              }
+            },
+            {
+              "minSeats": {
+                "MIN": "rooms_seats"
+              }
+            },
+            {
+              "random": {
+                "COUNT": "rooms_address"
+              }
+            }
+          ]
+        }
+    },
+    "errorExpected": false,
+    "expected": [
+        {
+            "rooms_name": "BIOL_1503",
+            "avgSeats": 16,
+            "minSeats": 16,
+            "sumLat": 49.26
+          },
+          {
+            "rooms_name": "BIOL_2000",
+            "avgSeats": 228,
+            "minSeats": 228,
+            "sumLat": 49.26
+          },
+          {
+            "rooms_name": "BIOL_2200",
+            "avgSeats": 76,
+            "minSeats": 76,
+            "sumLat": 49.26
+          },
+          {
+            "rooms_name": "BIOL_2519",
+            "avgSeats": 16,
+            "minSeats": 16,
+            "sumLat": 49.26
+          },
+          {
+            "rooms_name": "BRKX_2365",
+            "avgSeats": 70,
+            "minSeats": 70,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BRKX_2367",
+            "avgSeats": 24,
+            "minSeats": 24,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A101",
+            "avgSeats": 275,
+            "minSeats": 275,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A102",
+            "avgSeats": 150,
+            "minSeats": 150,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A103",
+            "avgSeats": 131,
+            "minSeats": 131,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A104",
+            "avgSeats": 150,
+            "minSeats": 150,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A201",
+            "avgSeats": 181,
+            "minSeats": 181,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A202",
+            "avgSeats": 108,
+            "minSeats": 108,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_A203",
+            "avgSeats": 108,
+            "minSeats": 108,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B141",
+            "avgSeats": 42,
+            "minSeats": 42,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B142",
+            "avgSeats": 26,
+            "minSeats": 26,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B208",
+            "avgSeats": 56,
+            "minSeats": 56,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B209",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B210",
+            "avgSeats": 48,
+            "minSeats": 48,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B211",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B213",
+            "avgSeats": 78,
+            "minSeats": 78,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B215",
+            "avgSeats": 78,
+            "minSeats": 78,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B216",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B218",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B219",
+            "avgSeats": 24,
+            "minSeats": 24,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B302",
+            "avgSeats": 32,
+            "minSeats": 32,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B303",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B304",
+            "avgSeats": 32,
+            "minSeats": 32,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B306",
+            "avgSeats": 32,
+            "minSeats": 32,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B307",
+            "avgSeats": 32,
+            "minSeats": 32,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B308",
+            "avgSeats": 32,
+            "minSeats": 32,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B309",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B310",
+            "avgSeats": 32,
+            "minSeats": 32,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B312",
+            "avgSeats": 18,
+            "minSeats": 18,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B313",
+            "avgSeats": 78,
+            "minSeats": 78,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B315",
+            "avgSeats": 78,
+            "minSeats": 78,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B316",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B318",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_B319",
+            "avgSeats": 24,
+            "minSeats": 24,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D201",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D204",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D205",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D207",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D209",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D213",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D214",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D216",
+            "avgSeats": 24,
+            "minSeats": 24,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D217",
+            "avgSeats": 65,
+            "minSeats": 65,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D218",
+            "avgSeats": 65,
+            "minSeats": 65,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D219",
+            "avgSeats": 65,
+            "minSeats": 65,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D221",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D222",
+            "avgSeats": 65,
+            "minSeats": 65,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D228",
+            "avgSeats": 24,
+            "minSeats": 24,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D229",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D301",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D304",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D306",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D307",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D312",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D313",
+            "avgSeats": 30,
+            "minSeats": 30,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D314",
+            "avgSeats": 40,
+            "minSeats": 40,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D315",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D316",
+            "avgSeats": 50,
+            "minSeats": 50,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D317",
+            "avgSeats": 50,
+            "minSeats": 50,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D319",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D322",
+            "avgSeats": 50,
+            "minSeats": 50,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D323",
+            "avgSeats": 31,
+            "minSeats": 31,
+            "sumLat": 49.27
+          },
+          {
+            "rooms_name": "BUCH_D325",
+            "avgSeats": 22,
+            "minSeats": 22,
+            "sumLat": 49.27
+          }
+    ]
+}

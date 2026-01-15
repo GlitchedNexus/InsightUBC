@@ -1,0 +1,466 @@
+{
+    "title": "Complex query 4 w/ transformations and sort",
+      "input": {
+        "WHERE": {
+          "AND": [
+            {
+              "GT": {
+                "big_avg": 94
+              }
+            },
+            {
+              "IS": {
+                "big_instructor": "*i*"
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "big_instructor",
+            "sumAvg",
+            "avgAvg"
+          ],
+          "ORDER": {
+            "dir": "DOWN",
+            "keys": [
+              "sumAvg",
+              "avgAvg"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "big_instructor"
+          ],
+          "APPLY": [
+            {
+              "sumAvg": {
+                "SUM": "big_avg"
+              }
+            },
+            {
+              "avgAvg": {
+                "AVG": "big_avg"
+              }
+            }
+          ]
+        }
+      },
+      "errorExpected": false,
+      "expected": [
+        {
+            "big_instructor": "kishor, nand",
+            "sumAvg": 856.76,
+            "avgAvg": 95.2
+          },
+          {
+            "big_instructor": "porath, marion",
+            "sumAvg": 670.24,
+            "avgAvg": 95.75
+          },
+          {
+            "big_instructor": "wassink, berend",
+            "sumAvg": 666.15,
+            "avgAvg": 95.16
+          },
+          {
+            "big_instructor": "marker, michael",
+            "sumAvg": 571.85,
+            "avgAvg": 95.31
+          },
+          {
+            "big_instructor": "frankish, charles james",
+            "sumAvg": 475.03,
+            "avgAvg": 95.01
+          },
+          {
+            "big_instructor": "munteanu, mircea",
+            "sumAvg": 378.48,
+            "avgAvg": 94.62
+          },
+          {
+            "big_instructor": "champion, kathleen",
+            "sumAvg": 377.94,
+            "avgAvg": 94.48
+          },
+          {
+            "big_instructor": "maillard, keith",
+            "sumAvg": 290,
+            "avgAvg": 96.67
+          },
+          {
+            "big_instructor": "ghement, isabella",
+            "sumAvg": 283.81,
+            "avgAvg": 94.6
+          },
+          {
+            "big_instructor": "heikkila, mary",
+            "sumAvg": 283.58,
+            "avgAvg": 94.53
+          },
+          {
+            "big_instructor": "vadeboncoeur, jennifer",
+            "sumAvg": 283.58,
+            "avgAvg": 94.53
+          },
+          {
+            "big_instructor": "burrows, marlene;harding, jillian;krist, jennifer;mccuaig, fairleth",
+            "sumAvg": 196.03,
+            "avgAvg": 98.02
+          },
+          {
+            "big_instructor": "cox, daniel",
+            "sumAvg": 195.52,
+            "avgAvg": 97.76
+          },
+          {
+            "big_instructor": "krist, jennifer",
+            "sumAvg": 194.85,
+            "avgAvg": 97.42
+          },
+          {
+            "big_instructor": "amaral, deborah;ford, laurie",
+            "sumAvg": 194.78,
+            "avgAvg": 97.39
+          },
+          {
+            "big_instructor": "gill, deana",
+            "sumAvg": 192.02,
+            "avgAvg": 96.01
+          },
+          {
+            "big_instructor": "girard, jonathan",
+            "sumAvg": 191.88,
+            "avgAvg": 95.94
+          },
+          {
+            "big_instructor": "dixon, david",
+            "sumAvg": 191.25,
+            "avgAvg": 95.63
+          },
+          {
+            "big_instructor": "mcquarrie, maureen",
+            "sumAvg": 191.17,
+            "avgAvg": 95.58
+          },
+          {
+            "big_instructor": "milner-bolotin, marina",
+            "sumAvg": 191.15,
+            "avgAvg": 95.58
+          },
+          {
+            "big_instructor": "de longis, anita",
+            "sumAvg": 191,
+            "avgAvg": 95.5
+          },
+          {
+            "big_instructor": "gopaluni, bhushan",
+            "sumAvg": 190.85,
+            "avgAvg": 95.42
+          },
+          {
+            "big_instructor": "petrina, stephen",
+            "sumAvg": 190.63,
+            "avgAvg": 95.31
+          },
+          {
+            "big_instructor": "levinson, tami",
+            "sumAvg": 190.34,
+            "avgAvg": 95.17
+          },
+          {
+            "big_instructor": "gordon, julia yulia",
+            "sumAvg": 190.23,
+            "avgAvg": 95.11
+          },
+          {
+            "big_instructor": "harding, jillian",
+            "sumAvg": 190.05,
+            "avgAvg": 95.03
+          },
+          {
+            "big_instructor": "ford, laurie",
+            "sumAvg": 189.87,
+            "avgAvg": 94.94
+          },
+          {
+            "big_instructor": "smith, gillian",
+            "sumAvg": 189.69,
+            "avgAvg": 94.84
+          },
+          {
+            "big_instructor": "feng, francis",
+            "sumAvg": 189.62,
+            "avgAvg": 94.81
+          },
+          {
+            "big_instructor": "lalji, fawziah;seto, katherine",
+            "sumAvg": 189.61,
+            "avgAvg": 94.81
+          },
+          {
+            "big_instructor": "svendsen, linda jane",
+            "sumAvg": 189.5,
+            "avgAvg": 94.75
+          },
+          {
+            "big_instructor": "schultz, izabela",
+            "sumAvg": 189.2,
+            "avgAvg": 94.6
+          },
+          {
+            "big_instructor": "sobolev, boris",
+            "sumAvg": 189.2,
+            "avgAvg": 94.6
+          },
+          {
+            "big_instructor": "pinar, william",
+            "sumAvg": 189.03,
+            "avgAvg": 94.52
+          },
+          {
+            "big_instructor": "el khatib, lara",
+            "sumAvg": 188.31,
+            "avgAvg": 94.16
+          },
+          {
+            "big_instructor": "jordan, elizabeth",
+            "sumAvg": 188.3,
+            "avgAvg": 94.15
+          },
+          {
+            "big_instructor": "frank, erica",
+            "sumAvg": 98.98,
+            "avgAvg": 98.98
+          },
+          {
+            "big_instructor": "coria, lino",
+            "sumAvg": 98.75,
+            "avgAvg": 98.75
+          },
+          {
+            "big_instructor": "morgan, tannis",
+            "sumAvg": 97.5,
+            "avgAvg": 97.5
+          },
+          {
+            "big_instructor": "wilk, diana",
+            "sumAvg": 97.41,
+            "avgAvg": 97.41
+          },
+          {
+            "big_instructor": "fraser, ailana",
+            "sumAvg": 97.25,
+            "avgAvg": 97.25
+          },
+          {
+            "big_instructor": "laba, izabella",
+            "sumAvg": 97.09,
+            "avgAvg": 97.09
+          },
+          {
+            "big_instructor": "nachmias, asaf",
+            "sumAvg": 96.83,
+            "avgAvg": 96.83
+          },
+          {
+            "big_instructor": "kishchenko, svetlana",
+            "sumAvg": 96.8,
+            "avgAvg": 96.8
+          },
+          {
+            "big_instructor": "veiga, marcello",
+            "sumAvg": 96.59,
+            "avgAvg": 96.59
+          },
+          {
+            "big_instructor": "timko, joleen",
+            "sumAvg": 96.36,
+            "avgAvg": 96.36
+          },
+          {
+            "big_instructor": "wei, juncheng",
+            "sumAvg": 96.25,
+            "avgAvg": 96.25
+          },
+          {
+            "big_instructor": "ervin, ruth",
+            "sumAvg": 96.21,
+            "avgAvg": 96.21
+          },
+          {
+            "big_instructor": "bryson, stephanie;o'connor, deborah;stainton, timothy;sullivan, t richard;tester, frank",
+            "sumAvg": 96.15,
+            "avgAvg": 96.15
+          },
+          {
+            "big_instructor": "bishundayal, deonarine",
+            "sumAvg": 96.11,
+            "avgAvg": 96.11
+          },
+          {
+            "big_instructor": "taylor, timothy",
+            "sumAvg": 96,
+            "avgAvg": 96
+          },
+          {
+            "big_instructor": "chan, eric",
+            "sumAvg": 95.86,
+            "avgAvg": 95.86
+          },
+          {
+            "big_instructor": "sochting, ingrid",
+            "sumAvg": 95.75,
+            "avgAvg": 95.75
+          },
+          {
+            "big_instructor": "stamp, philip c",
+            "sumAvg": 95.43,
+            "avgAvg": 95.43
+          },
+          {
+            "big_instructor": "weinberg, mark",
+            "sumAvg": 95.36,
+            "avgAvg": 95.36
+          },
+          {
+            "big_instructor": "krist, jennifer;mccuaig, fairleth",
+            "sumAvg": 95.29,
+            "avgAvg": 95.29
+          },
+          {
+            "big_instructor": "acheson, alison",
+            "sumAvg": 95,
+            "avgAvg": 95
+          },
+          {
+            "big_instructor": "gallipoli, giovanni",
+            "sumAvg": 95,
+            "avgAvg": 95
+          },
+          {
+            "big_instructor": "phillips, craig",
+            "sumAvg": 95,
+            "avgAvg": 95
+          },
+          {
+            "big_instructor": "clark, natalie",
+            "sumAvg": 95,
+            "avgAvg": 95
+          },
+          {
+            "big_instructor": "both, pauline;ervin, ruth",
+            "sumAvg": 94.88,
+            "avgAvg": 94.88
+          },
+          {
+            "big_instructor": "hatzikiriakos, savvas",
+            "sumAvg": 94.75,
+            "avgAvg": 94.75
+          },
+          {
+            "big_instructor": "yorke, erin",
+            "sumAvg": 94.75,
+            "avgAvg": 94.75
+          },
+          {
+            "big_instructor": "zhitnitsky, ariel",
+            "sumAvg": 94.7,
+            "avgAvg": 94.7
+          },
+          {
+            "big_instructor": "kealy, david",
+            "sumAvg": 94.56,
+            "avgAvg": 94.56
+          },
+          {
+            "big_instructor": "carenini, giuseppe",
+            "sumAvg": 94.5,
+            "avgAvg": 94.5
+          },
+          {
+            "big_instructor": "ercikan, kadriye",
+            "sumAvg": 94.5,
+            "avgAvg": 94.5
+          },
+          {
+            "big_instructor": "missiaen, sharon anne",
+            "sumAvg": 94.5,
+            "avgAvg": 94.5
+          },
+          {
+            "big_instructor": "reinsberg, stefan",
+            "sumAvg": 94.5,
+            "avgAvg": 94.5
+          },
+          {
+            "big_instructor": "janes, diane",
+            "sumAvg": 94.42,
+            "avgAvg": 94.42
+          },
+          {
+            "big_instructor": "loewen, christopher;nabi, ivan robert",
+            "sumAvg": 94.4,
+            "avgAvg": 94.4
+          },
+          {
+            "big_instructor": "stock, richard",
+            "sumAvg": 94.4,
+            "avgAvg": 94.4
+          },
+          {
+            "big_instructor": "oviedo-joekes, eugenia",
+            "sumAvg": 94.36,
+            "avgAvg": 94.36
+          },
+          {
+            "big_instructor": "mazzi, eric",
+            "sumAvg": 94.27,
+            "avgAvg": 94.27
+          },
+          {
+            "big_instructor": "konoval, michael brandon",
+            "sumAvg": 94.25,
+            "avgAvg": 94.25
+          },
+          {
+            "big_instructor": "lo, chih shen",
+            "sumAvg": 94.24,
+            "avgAvg": 94.24
+          },
+          {
+            "big_instructor": "mccuaig, fairleth",
+            "sumAvg": 94.21,
+            "avgAvg": 94.21
+          },
+          {
+            "big_instructor": "kion, tracy",
+            "sumAvg": 94.17,
+            "avgAvg": 94.17
+          },
+          {
+            "big_instructor": "white, aaron",
+            "sumAvg": 94.08,
+            "avgAvg": 94.08
+          },
+          {
+            "big_instructor": "rocha perkerwicz, samuel",
+            "sumAvg": 94.06,
+            "avgAvg": 94.06
+          },
+          {
+            "big_instructor": "curle, deirdre;jordan, elizabeth;norman, nancy",
+            "sumAvg": 94.05,
+            "avgAvg": 94.05
+          },
+          {
+            "big_instructor": "alam, matiul",
+            "sumAvg": 94.05,
+            "avgAvg": 94.05
+          }
+      ]
+  }
+  
+  
+  

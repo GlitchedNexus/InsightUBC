@@ -1,0 +1,12 @@
+{
+	"title": "Query empty ORDER",
+	"input": {
+        "WHERE": {},
+		"OPTIONS": {
+      		"COLUMNS": ["sections_avg"],
+			"ORDER": ""
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

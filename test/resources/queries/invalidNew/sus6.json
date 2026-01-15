@@ -1,0 +1,47 @@
+
+{
+    "title": "something sus 6",
+      "input": {
+        "WHERE": {
+          "AND": [
+            {
+              "IS": {
+                "rooms_furniture": "*Tables*"
+              }
+            },
+            {
+              "GT": {
+                "rooms_seats": 800
+              }
+            }
+          ]
+        },
+        "OPTIONS": {
+          "COLUMNS": [
+            "rooms_shortname",
+            "maxSeats"
+          ],
+          "ORDER": {
+            "dir": "DOWN",
+            "keys": [
+              "maxSeats"
+            ]
+          }
+        },
+        "TRANSFORMATIONS": {
+          "GROUP": [
+            "rooms_shortname"
+          ],
+          "APPLY": [
+            {
+              "maxSeats": {
+                "MAX": "rooms_seats"
+              }
+            }
+          ],
+          "random": 50
+        }
+      },
+      "errorExpected": true,
+      "expected": "InsightError"
+    }

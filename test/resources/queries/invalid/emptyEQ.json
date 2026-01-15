@@ -1,0 +1,15 @@
+{
+	"title": "Query empty EQ",
+	"input": {
+        "WHERE": {
+			"EQ": {}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

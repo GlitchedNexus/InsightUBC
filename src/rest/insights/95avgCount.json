@@ -1,0 +1,26 @@
+{
+    "WHERE": {
+      "GT": {
+        "sections_avg": 95
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "sections_dept",
+        "total"
+      ],
+      "ORDER": "total"
+    },
+    "TRANSFORMATIONS": {
+      "GROUP": [
+        "sections_dept"
+      ],
+      "APPLY": [
+        {
+          "total": {
+            "COUNT": "sections_year"
+          }
+        }
+      ]
+    }
+  }

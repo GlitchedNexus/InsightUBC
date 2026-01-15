@@ -1,0 +1,216 @@
+{
+	"title": "validDatasetNameContainsHyphen",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"ubc-sections_avg": 97
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"ubc-sections_dept",
+				"ubc-sections_avg"
+			],
+			"ORDER": "ubc-sections_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 97.09
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 97.09
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.09
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.09
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 97.25
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 97.25
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.29
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.29
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 97.33
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 97.33
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.41
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.41
+		},
+		{
+			"ubc-sections_dept": "cnps",
+			"ubc-sections_avg": 97.47
+		},
+		{
+			"ubc-sections_dept": "cnps",
+			"ubc-sections_avg": 97.47
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 97.48
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 97.48
+		},
+		{
+			"ubc-sections_dept": "educ",
+			"ubc-sections_avg": 97.5
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 97.53
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 97.53
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.67
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.69
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 97.78
+		},
+		{
+			"ubc-sections_dept": "crwr",
+			"ubc-sections_avg": 98
+		},
+		{
+			"ubc-sections_dept": "crwr",
+			"ubc-sections_avg": 98
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.08
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.21
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.21
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.36
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.45
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.45
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.5
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.5
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.58
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.58
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.58
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.58
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.7
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.71
+		},
+		{
+			"ubc-sections_dept": "nurs",
+			"ubc-sections_avg": 98.71
+		},
+		{
+			"ubc-sections_dept": "eece",
+			"ubc-sections_avg": 98.75
+		},
+		{
+			"ubc-sections_dept": "eece",
+			"ubc-sections_avg": 98.75
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.76
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.76
+		},
+		{
+			"ubc-sections_dept": "epse",
+			"ubc-sections_avg": 98.8
+		},
+		{
+			"ubc-sections_dept": "spph",
+			"ubc-sections_avg": 98.98
+		},
+		{
+			"ubc-sections_dept": "spph",
+			"ubc-sections_avg": 98.98
+		},
+		{
+			"ubc-sections_dept": "cnps",
+			"ubc-sections_avg": 99.19
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 99.78
+		},
+		{
+			"ubc-sections_dept": "math",
+			"ubc-sections_avg": 99.78
+		}
+	]
+}

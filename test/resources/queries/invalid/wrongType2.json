@@ -1,0 +1,17 @@
+{
+	"title": "Query with wrong type two",
+	"input": {
+        "WHERE": {
+			"EQ": {
+				"sections_avg": "55"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sections_avg"
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}
